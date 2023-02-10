@@ -1,1 +1,0 @@
-print("hai nama saya ucup")

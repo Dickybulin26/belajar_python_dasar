@@ -1,1 +1,0 @@
-data = "Dicky asqaelani ibnul hakim"

@@ -1,1 +1,0 @@
-data = "Gw ganteng banget"
