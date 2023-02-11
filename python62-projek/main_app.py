@@ -35,7 +35,7 @@ if __name__ =='__main__':
 
         match user_opetion:
             case '1': CRUD.read_console()
-            case '2': print('Create Data')
+            case '2': CRUD.create_console()
             case '3': print('Update Data')
             case '4': print('Delete Data')
 
