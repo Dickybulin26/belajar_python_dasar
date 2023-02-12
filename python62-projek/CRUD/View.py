@@ -1,12 +1,51 @@
 
 from . import Operasi
 
+def delete_console():
+    read_console()
+    while True:
+        print("Silahkan pilih nomor buku yang akan di delete")
+        no_buku = int(input("Nomor Buku: "))
+        data_buku = Operasi.read(index=no_buku)
+
+        if data_buku:
+            data_break = data_buku.split(',')
+            pk = data_break[0]
+            data_add = data_break[1]
+            penulis = data_break[2]
+            judul = data_break[3]
+            tahun = data_break[4][:-1]
+
+
+            #* data yang ingin diUpdate
+            print("\n"+'='*100)
+            print('Silahkan pilih data yang ingin anda ubah')
+            print(f"1. Judul\t: {judul:.40}")
+            print(f"2. Penulis\t: {penulis:.40}")
+            print(f"3. Tahun\t: {tahun:4}")
+
+            is_done = input("Yakin akan dihapus (y/n)?")
+            if is_done == 'y' or is_done == 'Y':
+                Operasi.delete(no_buku)
+                break
+
+        else:
+            print("no tidak valid, silahkan masukan lagi")
+
+    print("Data berhasil di hapus")
+
 def update_console():
     read_console()
     while True:
         print("Silahkan  pilih nomor buku yang akan di update")
         no_buku = int(input("No Buku: "))
         data_buku = Operasi.read(index=no_buku)
+        data_break = data_buku.split(',')
+        pk = data_break[0]
+        data_add = data_break[1]
+        penulis = data_break[2]
+        judul = data_break[3]
+        tahun = data_break[4][:-1]
 
         if data_buku:
             break
